@@ -1,0 +1,1 @@
+{'#include', 'stdio', 'stdlib', 'string', 'RMEncrypt', 'main', 'argc', 'char', 'argv', 'printf', 'wrong', 'parameters', 'return', 'const', 'path', 'skey', 'len_skey', 'strlen', 'encrypt_type', 'sscanf', 'rmEncrypt', 'encryption', 'success'}

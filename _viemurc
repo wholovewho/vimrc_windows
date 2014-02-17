@@ -1,0 +1,7 @@
+" Search
+hi IncSearch    gui=UNDERLINE guifg=#80ffff guibg=#0060c0
+hi Search       gui=NONE guifg=grey guibg=blue
+
+" allow multiple indentation/deindentation in visual mode
+    vnoremap < <gv
+    vnoremap > >gv

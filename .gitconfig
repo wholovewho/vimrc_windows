@@ -1,0 +1,9 @@
+[user]
+	name = Jie Liu
+	email = liujier@gmail.com
+[color]
+	ui = true
+[http]
+	postBuffer = 524288000
+	sslCAinfo = d:/Program Files (x86)/goagent-v3.1.4-67/local/CA.crt
+	sslVerify = false

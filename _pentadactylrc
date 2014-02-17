@@ -1,0 +1,124 @@
+" fwonce's .vimperatorrc
+" now it's .pentadactylrc
+" Last modified: Jan 12, 2011
+
+"set exrc
+
+""""""""""""""
+" Appearance "
+""""""""""""""
+" Status Bar, tab num
+" set guioptions=B
+" colorscheme fwchoco
+set showtabline=always
+" show the link in status line
+set showstatuslinks=status
+"FxFx = LJ's Firefox
+"set titlestring=FxFx
+" set visualbell
+" highlighted search matches
+set hlfind
+
+"""""""""""
+" Options "
+"""""""""""
+" set autocomplete=
+" set complete=sfl
+set history=20
+set messages=50
+" set defsearch=g
+" set suggestengines=g
+" set hintkeys=asdfg;lkjh
+"set hintinputs=
+"set hintmatching=firstletters
+"set mapleader=','
+"set maxitems=15
+"set noinsertmode
+"set sanitizeshutdown=formdata,marks
+"set sanitizetimespan=1w
+"set showtabline=multitab
+"set jsdebugger
+
+" pre/next jumps on steriod
+" set previouspattern='上一页','前一页','\bprev|previous\b',^<$,'^(<<|«)$','^(<|«)','(<|«)$'
+" set nextpattern='下一页','后页','\bnext\b',^>$,'^(>>|»)$','^(>|»)','(>|»)$','\bmore\b','下一题'
+
+" ignore specific keystrokes on some sites
+"set passkeys='http(s)?://www\.google\.com/reader/view/':jknpNPJKXOsltSDvocCmATrfu12/=-?<Space><S-Space><gh><ga><gs><gS><gu><gt><gT><gf><gF><gd><gp><ge><gc>,
+
+" tieba.baidu.com workaround
+"autocmd LocationChange 'http://tieba\.baidu\.com/' :set strictfocus
+"autocmd PageLoadPre 'http://tieba\.baidu\.com/' :set strictfocus
+
+"""""""""""""""
+" Keymappings "
+"""""""""""""""
+map -builtin j 5j
+map -builtin k 5k
+nmap -builtin -count h <count><C-p>
+nmap -builtin -count l <count><C-n>
+nmap -builtin <C-b> <C-v><C-b>
+
+" Open selected URL in new tab(s)
+" A search keyword can be given
+"command -bang -nargs=? -complete=search selgo execute ":tabopen<bang> <args> "+content.getSelection()
+"map s :selgo<CR>
+"map S :selgo!<CR>
+
+" toggle GUI components
+map <Leader>, :se go!=s<CR>
+map <Leader>. :tbt Bookmarks Toolbar<CR>
+
+" AutoProxy toggler
+map <Leader>P :se! extensions.autoproxy.proxyMode=auto<CR>:ec 'gfwAuto'<CR>
+map <Leader>p :se! extensions.autoproxy.proxyMode=global<CR>:ec 'gfwGlobal'<CR>
+
+" toggle ad blocker
+command toggleabp se! extensions.adblockplus.enabled!=extensions.adblockplus.enabled
+map <Leader>a :toggleabp<CR>
+
+" List bookmark tags (use ;o to follow the result)
+map <Leader>t :bmarks -tags=
+
+"""" Normal copy, cut, paste, etc.
+" Copy/Stop
+nmap -builtin <C-c> <C-v><C-c>
+cmap -builtin <C-c> <C-v><C-c>
+imap -builtin <C-c> <C-v><C-c>
+nmap -builtin <C-S-c> <C-c>
+" Paste/Pass through (next)
+imap -builtin <C-v> <C-v><C-v>
+nmap -builtin <C-S-v> <C-v>
+cmap -builtin <C-S-v> <C-v>
+imap -builtin <C-S-v> <C-v>
+" Cut/Decrease URL
+nmap -builtin <C-x> <C-v><C-x>
+cmap -builtin <C-x> <C-v><C-x>
+imap -builtin <C-x> <C-v><C-x>
+nmap -builtin <C-S-x> <C-x>
+cmap -builtin <C-S-x> <C-x>
+imap -builtin <C-S-x> <C-x>
+" Select all/Increase URL
+nmap -builtin <C-a> <C-v><C-a>
+cmap -builtin <C-a> <C-v><C-a>
+imap -builtin <C-a> <C-v><C-a>
+nmap -builtin <C-S-a> <C-a>
+cmap -builtin <C-S-a> <C-a>
+imap -builtin <C-S-a> <C-a>
+" Undo/Pass through (all)
+nmap -builtin <C-z> <C-v><C-z>
+cmap -builtin <C-z> <C-v><C-z>
+imap -builtin <C-z> <C-v><C-z>
+nmap -builtin <C-S-z> <C-z>
+cmap -builtin <C-S-z> <C-z>
+imap -builtin <C-S-z> <C-z>
+
+" Quick filling up (Press <C-]> to proceed)
+"iabbrev ]u fwonce
+"iabbrev ]e fwoncn@gmail.com
+"iabbrev ]ee felex@msn.cn
+"iabbrev ]h http://imthewan.com/
+
+
+map ie :js io.run("c:\\program files\\internet explorer\\iexplore.exe", [buffer.URL])<CR>
+
